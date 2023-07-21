@@ -20,7 +20,7 @@ export default function About() {
       />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <SlideFromBottom>
-          <div className="relative w-full h-[0] pb-[60%] bg-neutral-100 rounded-2xl">
+          <div className="relative w-full h-[0] pb-[60%] bg-white rounded-2xl">
             <img
               className="absolute left-0 top-0 w-full h-full object-contain"
               src={aboutImage}
