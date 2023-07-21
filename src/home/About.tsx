@@ -13,11 +13,22 @@ export default function About() {
     <></>
   ) : (
     <Container className="py-24 flex flex-col gap-16">
-      <SectionTitle
+      {/* <SectionTitle
         title="Despre mine"
         subtitle="ocupatie, experienta, cariera"
         className="mx-auto items-center"
-      />
+      /> */}
+      <div className={"flex flex-col gap-2 text-center items-center"}>
+        <Reveal>
+          <label className="font-bold uppercase text-md text-primary">
+            Ocupatie, Experienta, Cariera
+          </label>
+        </Reveal>
+
+        <Reveal>
+          <label className="text-4xl lg:text-6xl font-light">Despre Mine</label>
+        </Reveal>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <SlideFromBottom>
           <div className="relative w-full h-[0] pb-[60%] bg-white rounded-2xl">

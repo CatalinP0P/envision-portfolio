@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Container from "../components/ui/Container";
 import Reveal from "../components/animation/Reveal";
 import SlideFromBottom from "../components/animation/SlideFromBottom";
 import { ReactComponent as Image } from "../assets/background/hackatonImage.svg";
+import useContentful from "../hooks/useContentful";
 
 export default function Hackaton() {
-  return (
+  const { loading } = useContentful();
+  return loading ? (
+    <></>
+  ) : (
     <div className="relative">
       <Container
         className="flex flex-col items-center py-24 text-center relative"

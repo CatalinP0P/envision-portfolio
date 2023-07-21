@@ -14,18 +14,15 @@ export default function Reveal({
   className?: string;
 }) {
   const divRef = useRef(null);
-  const isInView = useInView(divRef, { once: false });
+  const isInView = useInView(divRef, { once: true });
   const animationControls = useAnimation();
   const slideControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
+      console.log("in View", divRef.current)
       slideControls.start("visible");
       animationControls.start("visible");
-    } else {
-      if (once) return;
-      slideControls.start("hidden");
-      animationControls.start("hidden");
     }
   }, [isInView]);
 
