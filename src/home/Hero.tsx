@@ -21,7 +21,7 @@ export default function Hero() {
         src={backgorund1}
       />
 
-      <div className=" max-w-[1000px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:items-center">
+      <Container className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:items-center">
         <div className="w-full mx-auto md:mx-0 flex flex-col items-start text-start gap-4 z-[1]">
           <a target="_blank" href="https://code-envision.ro">
             <Reveal color="white">
@@ -50,7 +50,7 @@ export default function Hero() {
             src={portfolioDetails?.image.fields.file.url || profileBlank}
           />
         </SlideFromBottom>
-      </div>
+      </Container>
     </div>
   );
 }
