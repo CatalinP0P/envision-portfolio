@@ -3,8 +3,11 @@ import Container from "./ui/Container";
 import { ReactComponent as FacebookSVG } from "../assets/logos/facebook.svg";
 import { ReactComponent as InstagramSVG } from "../assets/logos/instagram.svg";
 import background2 from "../assets/background/background2.jpg";
+import useContentful from "../hooks/useContentful";
 
 export default function Footer() {
+  const { loading, portfolioDetails } = useContentful();
+
   return (
     <div className="relative py-4">
       <img
@@ -15,20 +18,24 @@ export default function Footer() {
       <Container className="flex flex-row justify-between text-white">
         <label>© All right reserved {new Date().getFullYear()}</label>
         <div className="flex flex-row gap-4">
-          <a
-            target="_blank"
-            href="https://facebook.com"
-            className="hover:fill-neutral-200 fill-neutral-50"
-          >
-            <FacebookSVG height={24} width={24} />
-          </a>
-          <a
-            target="_blank"
-            href="https://instagram.com"
-            className="hover:fill-neutral-200 fill-neutral-50"
-          >
-            <InstagramSVG height={24} width={24} />
-          </a>
+          {portfolioDetails?.facebookLink && (
+            <a
+              target="_blank"
+              href={portfolioDetails?.facebookLink}
+              className="hover:fill-neutral-200 fill-neutral-50"
+            >
+              <FacebookSVG height={24} width={24} />
+            </a>
+          )}
+          {portfolioDetails?.instagramLink && (
+            <a
+              target="_blank"
+              href={portfolioDetails?.instagramLink}
+              className="hover:fill-neutral-200 fill-neutral-50"
+            >
+              <InstagramSVG height={24} width={24} />
+            </a>
+          )}
         </div>
       </Container>
     </div>
